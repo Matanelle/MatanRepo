@@ -25,6 +25,54 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+Thumbs.db
+desktop.ini
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Temp files
+*.swp
+*.bak
+
+# Node.js
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python
+venv/
+env/
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Java
+target/
+*.class
+
+# .NET
+bin/
+obj/
+
+# VSCode
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.project
+.classpath
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
