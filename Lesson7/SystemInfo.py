@@ -21,7 +21,6 @@ parser = argparse.ArgumentParser(description="Script to gather system informatio
 parser.add_argument("-os", "--os-info", action='store_true', required=False, help="Display operating system info")
 parser.add_argument("-c", "--cpu", action='store_true', required=False, help="Display CPU info")
 parser.add_argument("-m", "--mem", action='store_true', required=False, help="Display memory info")
-parser.add_argument("-p", "--proc", action='store_true', required=False, help="Display process info")
 parser.add_argument("-a", "--all", action='store_true', required=False, help="Display all info")
 parser.add_argument("-f", "--format", choices=["text", "json"], default="text", help="Output format: text or json")
 args = parser.parse_args()
@@ -34,7 +33,6 @@ class SystemInfo:
             "os_info": {},
             "cpu": {},
             "mem": {},
-            "proc": []
         }
 
     def get_os_info(self):
