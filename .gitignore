@@ -40,6 +40,9 @@ desktop.ini
 *.swp
 *.bak
 
+*.pem
+*.json
+
 # Node.js
 npm-debug.log
 yarn-debug.log
