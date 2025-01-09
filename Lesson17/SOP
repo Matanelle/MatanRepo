@@ -62,7 +62,6 @@ SOP: Setting Up Domain Monitoring Project and Service
 
      [Install]
      WantedBy=multi-user.target
-     EOF
 
 8. Start and Enable the Service:
    - Reload the systemd configuration:

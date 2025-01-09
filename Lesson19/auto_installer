@@ -1,0 +1,44 @@
+#!/bin/bash
+sudo -i
+
+#create directory for the app
+mkdir ./nordic
+chmod -R 755 ./nordic
+cd ./nordic
+
+#update and upgrade apt
+apt update && apt upgrade -y
+
+#copy app file add install all requirements
+apt install python3-pip -y
+apt install docker.io -y
+git clone https://github.com/ilya-work1/domain-monitoring-project.git
+cd domain-monitoring-project
+pip install -r ./requirements.txt --break-system-packages
+
+#Create service file
+cd /etc/systemd/system
+touch domainmonitoring.service
+chmod 755 domainmonitoring.service
+cat << EOF > "domainmonitoring.service"
+[Unit]
+description=Domain Monitoring Project Service
+after=network.target
+
+[Service]
+User=root
+WorkingDirectory=/nordic/domain-monitoring-project
+ExecStart=/usr/bin/python3 /nordic/domain-monitoring-project/app.py
+restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+#start and check the service
+systemctl stop domainmonitoring.service
+systemctl daemon-reload
+systemctl start domainmonitoring.service
+systemctl enable domainmonitoring.service
+systemctl status domainmonitoring.service
+echo "Service is running"
