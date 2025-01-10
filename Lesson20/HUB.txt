@@ -1,1 +1,2 @@
+docker run -d -p 8080:8080 matanelle1999/matandockerhub:1.0.0
 docker pull matanelle1999/matandockerhub:1.0.0
